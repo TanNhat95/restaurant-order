@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-const data = [
+const dataSlide = [
   {
     id: 1,
     title: "always fresh & always crispy & always hot",
@@ -22,6 +22,11 @@ const data = [
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [data, setData] = useState(dataSlide)
+
+  useEffect(() => {
+
+  }, [])
 
   useEffect(() => {
     const interval = setInterval(

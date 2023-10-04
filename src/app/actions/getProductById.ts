@@ -1,13 +1,7 @@
 import prisma from '@/utils/connect'
-import getCurrentUser from './getCurrentUser'
 
 
 const getProductById = async ({params}: {params: { id: string}}) => {
-    const currentUser = await getCurrentUser()
-
-    if (!currentUser?.id) {
-        return []
-    }
 
     try {
         const productById = await prisma.product.findUnique({

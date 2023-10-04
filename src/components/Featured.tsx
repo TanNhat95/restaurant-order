@@ -17,7 +17,6 @@ import React from "react";
 const Featured = async () => {
 
   const featuredProducts = await getProducts() || []
-  console.log(featuredProducts)
   return (
     <div className="w-screen overflow-x-scroll text-red-500">
       {/* WRAPPER */}

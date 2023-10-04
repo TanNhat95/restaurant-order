@@ -40,7 +40,6 @@ export const useCartStore = create(persist<Cart & ActionTypes>(
                         totalItems: state.totalItems + item.quantity,
                     })
                     )
-                    console.log(item.price)
                 }
             },
             removeFromCart(item) {
