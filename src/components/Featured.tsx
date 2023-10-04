@@ -1,21 +1,22 @@
+import getProducts from "@/app/actions/getProducts";
 import { Product } from "@/types/types";
 import Image from "next/image";
 import React from "react";
 
-const getData = async () => {
-  const res = await fetch('http://localhost:3000/api/products', {
-    cache: 'no-store'
-  })
-  if (!res.ok) {
-    throw new Error("Failed !!!")
-  }
+// const getData = async () => {
+//   const res = await fetch('http://localhost:3000/api/products', {
+//     cache: 'no-store'
+//   })
+//   if (!res.ok) {
+//     throw new Error("Failed !!!")
+//   }
 
-  return res.json()
-}
+//   return res.json()
+// }
 
 const Featured = async () => {
 
-  const featuredProducts: Product[] = await getData()
+  const featuredProducts = await getProducts() || []
   console.log(featuredProducts)
   return (
     <div className="w-screen overflow-x-scroll text-red-500">
@@ -37,7 +38,7 @@ const Featured = async () => {
             <div className=" flex-1 flex flex-col items-center justify-center text-center gap-4">
               <h1 className="text-xl font-bold uppercase xl:text-2xl 2xl:text-3xl">{item.title}</h1>
               <p className="p-4 2xl:p-8">{item.desc}</p>
-              <span className="text-xl font-bold">${item.price}</span>
+              <span className="text-xl font-bold">${Number(item.price)}</span>
               <button className="bg-red-500 text-white p-2 rounded-md">
                 Add to Cart
               </button>
