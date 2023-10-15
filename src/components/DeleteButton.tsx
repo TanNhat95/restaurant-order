@@ -19,7 +19,7 @@ const DeleteButton = ({id}: {id: string}) => {
     }
 
     const handleDelete = async () => {
-        const result = await fetch(`http://localhost:3000/api/products/${id}`, {
+        const result = await fetch(`https://restaurant-order-alpha.vercel.app//api/products/${id}`, {
             method: 'DELETE'
         })
         if (result.status === 200) {

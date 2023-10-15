@@ -1,6 +1,7 @@
 import getProducts from "@/app/actions/getProducts";
 import { Product } from "@/types/types";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 // const getData = async () => {
@@ -38,9 +39,11 @@ const Featured = async () => {
               <h1 className="text-xl font-bold uppercase xl:text-2xl 2xl:text-3xl">{item.title}</h1>
               <p className="p-4 2xl:p-8">{item.desc}</p>
               <span className="text-xl font-bold">${Number(item.price)}</span>
-              <button className="bg-red-500 text-white p-2 rounded-md">
-                Add to Cart
-              </button>
+              <Link href={`/product/${item.id}`}>
+                <button className="bg-red-500 text-white p-2 rounded-md">
+                  Add to Cart
+                </button>
+              </Link>
             </div>
           </div>
         ))}

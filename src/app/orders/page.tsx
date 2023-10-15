@@ -26,7 +26,7 @@ const OrdersPage = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ['orders'],
     queryFn: () =>
-      fetch('http://localhost:3000/api/orders').then(
+      fetch('https://restaurant-order-alpha.vercel.app//api/orders').then(
         (res) => res.json(),
       ),
   })
@@ -35,7 +35,7 @@ const OrdersPage = () => {
 
   const mutation = useMutation({
     mutationFn: ({ id, status }: { id: string; status: string}) => {
-      return fetch(`http://localhost:3000/api/orders/${id}`, {
+      return fetch(`https://restaurant-order-alpha.vercel.app//api/orders/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

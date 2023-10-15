@@ -19,8 +19,8 @@
 import React, { useState, useEffect } from "react";
 
 const CountDown = () => {
-  
-  let difference = +new Date(`10/10/2023`) - +new Date();
+
+  let difference = +new Date(`10/12/2024`) - +new Date();
   const [delay, setDelay] = useState(difference);
 
   const d = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -43,7 +43,7 @@ const CountDown = () => {
   });
   return (
     <span className="font-bold text-5xl text-yellow-300">
-      {d}:{h}:{m}:{s}
+      {12}:{h}:{m}:{s}
     </span>
   );
 };
